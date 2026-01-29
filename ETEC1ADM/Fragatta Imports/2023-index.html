@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fragatta Imports - Importação de Veículos de Luxo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header e Navegação */
+        header {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: white;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .logo-img {
+            width: 50px;
+            height: 50px;
+            background: #e94560;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+        }
+        
+        .logo-text h1 {
+            font-size: 1.8rem;
+            margin-bottom: 5px;
+        }
+        
+        .logo-text p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 8px 15px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        nav a:hover, nav a.active {
+            background-color: #e94560;
+            color: white;
+        }
+        
+        .dropdown {
+            position: relative;
+        }
+        
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 220px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            z-index: 1;
+            top: 100%;
+            left: 0;
+            overflow: hidden;
+        }
+        
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        
+        .dropdown-content a {
+            color: #333;
+            padding: 12px 16px;
+            display: block;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .dropdown-content a:hover {
+            background-color: #f5f5f5;
+            color: #e94560;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1617788138016-aafb3a888d44?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 120px 0;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .hero h2 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            opacity: 0.9;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: #e94560;
+            color: white;
+            padding: 15px 35px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background: #d33a54;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(233, 69, 96, 0.3);
+        }
+        
+        /* Main Content */
+        .main-content {
+            padding: 40px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: #1a1a2e;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            background: #e94560;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .section-title p {
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+        }
+        
+        /* Produtos Destaque */
+        .featured-products {
+            margin-bottom: 80px;
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .product-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .product-img {
+            height: 200px;
+            background-color: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #aaa;
+            font-size: 3rem;
+        }
+        
+        .product-info {
+            padding: 25px;
+        }
+        
+        .product-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: #1a1a2e;
+        }
+        
+        .product-info p {
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        .product-price {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #e94560;
+            margin-bottom: 15px;
+        }
+        
+        /* Sobre */
+        .about-section {
+            margin-bottom: 80px;
+        }
+        
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-text h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #1a1a2e;
+        }
+        
+        .about-text p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        .about-img {
+            flex: 1;
+            height: 400px;
+            background-color: #ddd;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #888;
+            font-size: 1.5rem;
+        }
+        
+        /* Versões */
+        .versions {
+            background-color: #f0f2f5;
+            padding: 60px 0;
+            margin-bottom: 60px;
+            border-radius: 15px;
+        }
+        
+        .versions-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .version-card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            flex: 1;
+            max-width: 350px;
+        }
+        
+        .version-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .version-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #1a1a2e;
+        }
+        
+        .version-card p {
+            color: #666;
+            margin-bottom: 25px;
+        }
+        
+        /* Footer */
+        footer {
+            background: #1a1a2e;
+            color: white;
+            padding: 60px 0 30px;
+            margin-top: 80px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.5rem;
+            margin-bottom: 25px;
+            color: #e94560;
+        }
+        
+        .footer-column p, .footer-column a {
+            color: #bbb;
+            margin-bottom: 15px;
+            display: block;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-column a:hover {
+            color: #e94560;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid #2d2d44;
+            color: #888;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsividade */
+        @media (max-width: 992px) {
+            .header-content {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .versions-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .version-card {
+                width: 100%;
+                max-width: 500px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .hero h2 {
+                font-size: 2.5rem;
+            }
+            
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header com navegação -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-img">
+                        <i class="fas fa-car"></i>
+                    </div>
+                    <div class="logo-text">
+                        <h1>Fragatta Imports</h1>
+                        <p>Importação de Veículos de Luxo</p>
+                    </div>
+                </div>
+                
+                <nav>
+                    <ul>
+                        <li><a href="#home" class="active"><i class="fas fa-home"></i> Início</a></li>
+                        <li><a href="https://kavablox.github.io/Kawa-Moreira-Portfolio/ETEC1ADM/Fragatta%20Imports/2.Sobre/Sobre%20_%20Fragatta%20Imports.htm"><i class="fas fa-info-circle"></i> Sobre</a></li>
+                        <li><a href="https://kavablox.github.io/Kawa-Moreira-Portfolio/ETEC1ADM/Fragatta%20Imports/3.Estoque/All%20Products%20_%20Fragatta%20Imports.htm"><i class="fas fa-warehouse"></i> Estoque</a></li>
+                        <li class="dropdown">
+                            <a href="#"><i class="fas fa-car-side"></i> Produtos <i class="fas fa-chevron-down"></i></a>
+                            <div class="dropdown-content">
+                                <a href="https://kavablox.github.io/Kawa-Moreira-Portfolio/ETEC1ADM/Fragatta%20Imports/(Produtos)/Ferrari%20Purosangue%202024%20_%20Fragatta%20Imports.htm">Ferrari Purosangue 2024</a>
+                                <a href="https://kavablox.github.io/Kawa-Moreira-Portfolio/ETEC1ADM/Fragatta%20Imports/(Produtos)/Ford%20Galaxie%201967%20_%20Fragatta%20Imports.htm">Ford Galaxie 1967</a>
+                                <a href="https://kavablox.github.io/Kawa-Moreira-Portfolio/ETEC1ADM/Fragatta%20Imports/(Produtos)/Genesis%20G90%202023%20_%20Fragatta%20Imports.htm">Genesis G90 2023</a>
+                                <a href="https://kavablox.github.io/Kawa-Moreira-Portfolio/ETEC1ADM/Fragatta%20Imports/(Produtos)/Mercedes-Benz%20190%20SL%20Roadster%201959%20_%20Fragatta%20Imports.htm">Mercedes-Benz 190 SL Roadster 1959</a>
+                                <a href="https://kavablox.github.io/Kawa-Moreira-Portfolio/ETEC1ADM/Fragatta%20Imports/(Produtos)/Mercedes-Benz%20300%20SL%20Gullwing%201956%20_%20Fragatta%20Imports.htm">Mercedes-Benz 300 SL Gullwing 1956</a>
+                                <a href="https://kavablox.github.io/Kawa-Moreira-Portfolio/ETEC1ADM/Fragatta%20Imports/(Produtos)/Porsche%20911T%20Coup%C3%A9%201971%20_%20Fragatta%20Imports.htm">Porsche 911T Coupé 1971</a>
+                                <a href="https://kavablox.github.io/Kawa-Moreira-Portfolio/ETEC1ADM/Fragatta%20Imports/(Produtos)/Shelby%20Cobra%20Backdraft%201965%20_%20Fragatta%20Imports.htm">Shelby Cobra Backdraft 1965</a>
+                            </div>
+                        </li>
+                        <li><a href="#portfolio"><i class="fas fa-images"></i> Portfólio</a></li>
+                        <li><a href="https://kavablox.github.io/Kawa-Moreira-Portfolio/"><i class="fas fa-arrow-left"></i> Voltar</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h2>Fragatta Imports</h2>
+            <p>Especializados na importação de veículos de luxo de alto padrão. Oferecemos os modelos mais exclusivos e desejados do mercado automotivo mundial.</p>
+            <a href="https://kavablox.github.io/Kawa-Moreira-Portfolio/ETEC1ADM/Fragatta%20Imports/3.Estoque/All%20Products%20_%20Fragatta%20Imports.htm" class="btn">Ver Estoque Completo</a>
+        </div>
+    </section>
+    
+    <!-- Conteúdo Principal -->
+    <div class="container main-content">
+        <!-- Produtos em Destaque -->
+        <section class="featured-products">
+            <div class="section-title">
+                <h2>Veículos em Destaque</h2>
+                <p>Conheça alguns dos nossos modelos mais exclusivos disponíveis para importação</p>
+            </div>
+            
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-img">
+                        <i class="fas fa-car"></i>
+                    </div>
+                    <div class="product-info">
+                        <h3>Ferrari Purosangue 2024</h3>
+                        <p>O primeiro SUV da Ferrari, combinando desempenho esportivo com luxo e praticidade.</p>
+                        <div class="product-price">R$ 5.200.000</div>
+                        <a href="https://kavablox.github.io/Kawa-Moreira-Portfolio/ETEC1ADM/Fragatta%20Imports/(Produtos)/Ferrari%20Purosangue%202024%20_%20Fragatta%20Imports.htm" class="btn">Ver Detalhes</a>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-img">
+                        <i class="fas fa-car"></i>
+                    </div>
+                    <div class="product-info">
+                        <h3>Mercedes-Benz 300 SL Gullwing 1956</h3>
+                        <p>Um clássico atemporal com portas asa de gaivota e design icônico.</p>
+                        <div class="product-price">R$ 8.500.000</div>
+                        <a href="https://kavablox.github.io/Kawa-Moreira-Portfolio/ETEC1ADM/Fragatta%20Imports/(Produtos)/Mercedes-Benz%20300%20SL%20Gullwing%201956%20_%20Fragatta%20Imports.htm" class="btn">Ver Detalhes</a>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-img">
+                        <i class="fas fa-car"></i>
+                    </div>
+                    <div class="product-info">
+                        <h3>Porsche 911T Coupé 1971</h3>
+                        <p>Clássico esportivo alemão em estado de concours, perfeito para colecionadores.</p>
+                        <div class="product-price">R$ 1.800.000</div>
+                        <a href="https://kavablox.github.io/Kawa-Moreira-Portfolio/ETEC1ADM/Fragatta%20Imports/(Produtos)/Porsche%20911T%20Coup%C3%A9%201971%20_%20Fragatta%20Imports.htm" class="btn">Ver Detalhes</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Sobre -->
+        <section class="about-section">
+            <div class="section-title">
+                <h2>Sobre a Fragatta Imports</h2>
+                <p>Conheça nossa história e compromisso com a excelência na importação de veículos</p>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Excelência na Importação de Veículos de Luxo</h3>
+                    <p>A Fragatta Imports é uma empresa especializada na importação de veículos de luxo de alto padrão, com mais de 15 anos de experiência no mercado automotivo internacional.</p>
+                    <p>Nosso compromisso é oferecer aos nossos clientes os modelos mais exclusivos e desejados do mundo, com todo o suporte necessário para a importação, documentação e legalização dos veículos no Brasil.</p>
+                    <p>Trabalhamos com marcas como Ferrari, Mercedes-Benz, Porsche, Bentley, Rolls-Royce e muitas outras, sempre priorizando a qualidade, procedência e satisfação total de nossos clientes.</p>
+                    <a href="https://kavablox.github.io/Kawa-Moreira-Portfolio/ETEC1ADM/Fragatta%20Imports/2.Sobre/Sobre%20_%20Fragatta%20Imports.htm" class="btn">Saiba Mais</a>
+                </div>
+                <div class="about-img">
+                    <div>
+                        <i class="fas fa-building"></i>
+                        <p>Sede Fragatta Imports</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Versões do Site -->
+        <section class="versions">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Versões do Projeto</h2>
+                    <p>Desenvolvimento do website durante o primeiro ano do curso técnico</p>
+                </div>
+                
+                <div class="versions-container">
+                    <div class="version-card">
+                        <h3>Versão 11/08</h3>
+                        <p>Primeira versão do website desenvolvida em agosto de 2023, com layout inicial e estrutura básica.</p>
+                        <a href="https://kavablox.github.io/Kawa-Moreira-Portfolio/ETEC1ADM/Fragatta%20Imports/1.P%C3%A1gina%20Inicial/11.08/P%C3%A1gina%20inicial%20_%20Fragatta%20Imports.htm" class="btn">Acessar Versão</a>
+                    </div>
+                    
+                    <div class="version-card">
+                        <h3>Versão 30/10</h3>
+                        <p>Versão atualizada com design aprimorado, mais funcionalidades e conteúdo completo.</p>
+                        <a href="https://kavablox.github.io/Kawa-Moreira-Portfolio/ETEC1ADM/Fragatta%20Imports/1.P%C3%A1gina%20Inicial/30.10/P%C3%A1gina%20inicial%20_%20Fragatta%20Imports.htm" class="btn">Acessar Versão</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Portfólio -->
+        <section id="portfolio">
+            <div class="section-title">
+                <h2>Portfólio</h2>
+                <p>Galeria de imagens dos veículos importados e entregues aos nossos clientes</p>
+            </div>
+            
+            <div style="text-align: center; padding: 40px 0;">
+                <div style="background-color: #f0f0f0; padding: 60px; border-radius: 12px; margin-bottom: 30px;">
+                    <i class="fas fa-images" style="font-size: 4rem; color: #aaa; margin-bottom: 20px;"></i>
+                    <h3 style="margin-bottom: 20px;">Portfólio em Desenvolvimento</h3>
+                    <p style="max-width: 600px; margin: 0 auto 30px;">Nossa galeria de portfólio está sendo preparada com as imagens dos veículos que já importamos e entregamos.</p>
+                    <p>Em breve estará disponível!</p>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Fragatta Imports</h3>
+                    <p>Especializada na importação de veículos de luxo de alto padrão, com mais de 15 anos de experiência no mercado automotivo internacional.</p>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Links Rápidos</h3>
+                    <a href="#home">Página Inicial</a>
+                    <a href="https://kavablox.github.io/Kawa-Moreira-Portfolio/ETEC1ADM/Fragatta%20Imports/2.Sobre/Sobre%20_%20Fragatta%20Imports.htm">Sobre Nós</a>
+                    <a href="https://kavablox.github.io/Kawa-Moreira-Portfolio/ETEC1ADM/Fragatta%20Imports/3.Estoque/All%20Products%20_%20Fragatta%20Imports.htm">Estoque</a>
+                    <a href="#portfolio">Portfólio</a>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contato</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Av. Paulista, 1000 - São Paulo, SP</p>
+                    <p><i class="fas fa-phone"></i> (11) 3333-4444</p>
+                    <p><i class="fas fa-envelope"></i> contato@fragattaimports.com.br</p>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>Projeto desenvolvido por Kawã Fernandes Moreira - ETEC Carapicuíba - 1º ADM (2023)</p>
+                <p>Fragatta Imports - Website para fins educacionais</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Adicionar classe ativa ao link de navegação atual
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentPage = window.location.pathname;
+            const navLinks = document.querySelectorAll('nav a');
+            
+            navLinks.forEach(link => {
+                if (link.getAttribute('href') === currentPage || 
+                   (link.getAttribute('href') === '#home' && currentPage.includes('2023-index.html'))) {
+                    link.classList.add('active');
+                }
+            });
+            
+            // Smooth scroll para âncoras
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            console.log("Fragatta Imports - Website de importação de veículos de luxo");
+            console.log("Projeto desenvolvido por Kawã Fernandes Moreira - ETEC Carapicuíba");
+        });
+    </script>
+</body>
+</html>
