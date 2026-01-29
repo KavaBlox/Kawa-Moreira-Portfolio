@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025 - Projetos do 3º Ano ADM | Kawã Fernandes</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f8fafc;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            color: white;
+            padding: 80px 0 40px;
+            text-align: center;
+            border-radius: 0 0 20px 20px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .year-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 1rem;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+        
+        .subtitle {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+        
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255, 255, 255, 0.15);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+        }
+        
+        .back-btn:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: translateY(-3px);
+        }
+        
+        /* Main Content */
+        .main-content {
+            padding: 20px 0 60px;
+        }
+        
+        .section {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            margin-bottom: 40px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border-left: 5px solid #3b82f6;
+        }
+        
+        .section-tcc {
+            border-left-color: #10b981;
+        }
+        
+        .section-aps {
+            border-left-color: #f59e0b;
+        }
+        
+        .section-socio {
+            border-left-color: #8b5cf6;
+        }
+        
+        .section-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+        
+        .section-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            font-size: 30px;
+            color: white;
+        }
+        
+        .icon-tcc {
+            background: linear-gradient(135deg, #10b981 0%, #34d399 100%);
+        }
+        
+        .icon-aps {
+            background: linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%);
+        }
+        
+        .icon-socio {
+            background: linear-gradient(135deg, #8b5cf6 0%, #a78bfa 100%);
+        }
+        
+        .section-title h2 {
+            font-size: 2.2rem;
+            color: #1e293b;
+            margin-bottom: 5px;
+        }
+        
+        .section-title p {
+            color: #64748b;
+            font-size: 1.1rem;
+        }
+        
+        /* Project Cards */
+        .project-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+        }
+        
+        .project-card {
+            background: #f8fafc;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            border: 1px solid #e2e8f0;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .project-header {
+            padding: 25px 25px 15px;
+            background: white;
+        }
+        
+        .project-header h3 {
+            font-size: 1.5rem;
+            color: #1e293b;
+            margin-bottom: 10px;
+        }
+        
+        .project-header p {
+            color: #64748b;
+            font-size: 1rem;
+        }
+        
+        .project-body {
+            padding: 0 25px 25px;
+            flex-grow: 1;
+        }
+        
+        .project-body p {
+            color: #475569;
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+        
+        .project-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: auto;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #3b82f6;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background: #2563eb;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(59, 130, 246, 0.3);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            color: #3b82f6;
+            border: 2px solid #3b82f6;
+        }
+        
+        .btn-outline:hover {
+            background: #3b82f6;
+            color: white;
+        }
+        
+        .btn-tcc {
+            background: #10b981;
+        }
+        
+        .btn-tcc:hover {
+            background: #0da271;
+            box-shadow: 0 5px 15px rgba(16, 185, 129, 0.3);
+        }
+        
+        .btn-aps {
+            background: #f59e0b;
+        }
+        
+        .btn-aps:hover {
+            background: #d97706;
+            box-shadow: 0 5px 15px rgba(245, 158, 11, 0.3);
+        }
+        
+        .btn-socio {
+            background: #8b5cf6;
+        }
+        
+        .btn-socio:hover {
+            background: #7c3aed;
+            box-shadow: 0 5px 15px rgba(139, 92, 246, 0.3);
+        }
+        
+        /* Designs Section */
+        .designs-section {
+            margin-top: 40px;
+        }
+        
+        .designs-section h3 {
+            font-size: 1.5rem;
+            color: #1e293b;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e2e8f0;
+        }
+        
+        .design-timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .design-item {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            border-left: 4px solid #f59e0b;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        .design-item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .design-item h4 {
+            font-size: 1.2rem;
+            color: #1e293b;
+        }
+        
+        .design-date {
+            background: #fef3c7;
+            color: #92400e;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+        
+        .design-item p {
+            color: #64748b;
+            margin-bottom: 15px;
+        }
+        
+        /* Logo Section */
+        .logo-section {
+            margin-top: 40px;
+            background: #f0f9ff;
+            padding: 25px;
+            border-radius: 10px;
+            border: 2px dashed #bae6fd;
+        }
+        
+        .logo-section h3 {
+            font-size: 1.5rem;
+            color: #1e293b;
+            margin-bottom: 20px;
+        }
+        
+        .logo-preview {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .logo-img {
+            width: 150px;
+            height: 150px;
+            background-color: white;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #e2e8f0;
+            overflow: hidden;
+        }
+        
+        .logo-img img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+        
+        .logo-links {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        /* Footer */
+        footer {
+            background: #1e293b;
+            color: white;
+            padding: 40px 0;
+            margin-top: 60px;
+            text-align: center;
+        }
+        
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .footer-content p {
+            margin-bottom: 15px;
+            color: #cbd5e1;
+        }
+        
+        .github-link {
+            color: #60a5fa;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .github-link:hover {
+            text-decoration: underline;
+        }
+        
+        /* Responsividade */
+        @media (max-width: 992px) {
+            .project-cards {
+                grid-template-columns: 1fr;
+            }
+            
+            .section-header {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .section-icon {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section {
+                padding: 30px 20px;
+            }
+            
+            .logo-preview {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="year-badge">3º Ano ADM - 2025</div>
+            <h1>Projetos do Terceiro Ano</h1>
+            <p class="subtitle">Trabalhos desenvolvidos durante o último ano do curso técnico em Administração na ETEC de Carapicuíba, incluindo TCC, APS e projetos interdisciplinares.</p>
+            <a href="https://kavablox.github.io/Kawa-Moreira-Portfolio/" class="back-btn">
+                <i class="fas fa-arrow-left"></i> Voltar ao Portfólio Principal
+            </a>
+        </div>
+    </header>
+    
+    <!-- Main Content -->
+    <div class="container main-content">
+        
+        <!-- TCC Section -->
+        <section class="section section-tcc">
+            <div class="section-header">
+                <div class="section-icon icon-tcc">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <div class="section-title">
+                    <h2>Trabalho de Conclusão de Curso (TCC)</h2>
+                    <p>GrainShield Brasil - Soluções em Proteção de Grãos Ltda.</p>
+                </div>
+            </div>
+            
+            <div class="project-cards">
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Website do TCC</h3>
+                        <p>Apresentação completa da empresa fictícia</p>
+                    </div>
+                    <div class="project-body">
+                        <p>Website desenvolvido para apresentar o projeto de TCC "GrainShield Brasil", uma empresa especializada em soluções para proteção e armazenamento de grãos. O site inclui todas as seções necessárias para demonstrar o plano de negócios completo.</p>
+                        <div class="project-links">
+                            <a href="https://kavablox.github.io/Kawa-Moreira-Portfolio/ETEC3ADM/GrainShield/Final/TCC_Website.html" class="btn btn-tcc">
+                                <i class="fas fa-external-link-alt"></i> Acessar Website
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- APS Section -->
+        <section class="section section-aps">
+            <div class="section-header">
+                <div class="section-icon icon-aps">
+                    <i class="fas fa-ice-cream"></i>
+                </div>
+                <div class="section-title">
+                    <h2>Administração e Produção de Serviços (APS)</h2>
+                    <p>Neve Encantada Gelatto - Sorveteria Artesanal</p>
+                </div>
+            </div>
+            
+            <div class="project-cards">
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Website Principal</h3>
+                        <p>Design e desenvolvimento do site da sorveteria</p>
+                    </div>
+                    <div class="project-body">
+                        <p>Site desenvolvido para a sorveteria artesanal "Neve Encantada Gelatto", contendo informações sobre produtos, localização, história da marca e atraindo clientes com design atrativo e funcional.</p>
+                        
+                        <div class="designs-section">
+                            <h3>Evolução do Design</h3>
+                            <div class="design-timeline">
+                                <div class="design-item">
+                                    <div class="design-item-header">
+                                        <h4>Design 1 (Beta)</h4>
+                                        <span class="design-date">11/09/2025</span>
+                                    </div>
+                                    <p>Primeira versão do website com layout básico e estrutura inicial.</p>
+                                    <a href="https://kavablox.github.io/Kawa-Moreira-Portfolio/ETEC3ADM/Neve%20Encantada/Website/Beta/Neve%20Encantada%20(Beta1).html" class="btn btn-aps">
+                                        <i class="fas fa-eye"></i> Visualizar Design 1
+                                    </a>
+                                </div>
+                                
+                                <div class="design-item">
+                                    <div class="design-item-header">
+                                        <h4>Design 2 (Beta)</h4>
+                                        <span class="design-date">17/11/2025</span>
+                                    </div>
+                                    <p>Segunda versão com melhorias no design e adição de mais conteúdo.</p>
+                                    <a href="https://kavablox.github.io/Kawa-Moreira-Portfolio/ETEC3ADM/Neve%20Encantada/Website/Beta/Neve%20Encantada%20(Beta2).html" class="btn btn-aps">
+                                        <i class="fas fa-eye"></i> Visualizar Design 2
+                                    </a>
+                                </div>
+                                
+                                <div class="design-item">
+                                    <div class="design-item-header">
+                                        <h4>Design Final</h4>
+                                        <span class="design-date">Versão Final</span>
+                                    </div>
+                                    <p>Versão final do website com design completo e funcionalidades implementadas.</p>
+                                    <div class="project-links">
+                                        <a href="https://kavablox.github.io/Kawa-Moreira-Portfolio/ETEC3ADM/Neve%20Encantada/Website/Full/Home.htm" class="btn btn-aps">
+                                            <i class="fas fa-external-link-alt"></i> Website Final
+                                        </a>
+                                        <a href="https://vestuarioaxel.my.canva.site/neve-encantada/" class="btn btn-outline" style="border-color: #f59e0b; color: #f59e0b;">
+                                            <i class="fas fa-palette"></i> Versão Canva
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Apresentação e Identidade Visual</h3>
+                        <p>Materiais de apoio e branding</p>
+                    </div>
+                    <div class="project-body">
+                        <p>Materiais desenvolvidos para complementar o projeto da sorveteria, incluindo apresentação de negócios e identidade visual da marca.</p>
+                        
+                        <div class="project-links" style="margin-top: 20px;">
+                            <a href="https://kavablox.github.io/Kawa-Moreira-Portfolio/ETEC3ADM/Neve%20Encantada/Apresentação/Final/Neve_Encantada_Negocios.html" class="btn btn-aps">
+                                <i class="fas fa-presentation"></i> Apresentação do Negócio
+                            </a>
+                        </div>
+                        
+                        <div class="logo-section">
+                            <h3>Logo da Marca</h3>
+                            <div class="logo-preview">
+                                <div class="logo-img">
+                                    <!-- Logo placeholder - na prática, você pode carregar a imagem -->
+                                    <i class="fas fa-ice-cream" style="font-size: 4rem; color: #3b82f6;"></i>
+                                </div>
+                                <div class="logo-links">
+                                    <a href="https://kavablox.github.io/Kawa-Moreira-Portfolio/ETEC3ADM/Neve%20Encantada/Documentos/White%20and%20Blue%20Illustrative%20Playfull%20Ice%20Cream%20Logo%20(2).png" class="btn btn-outline" style="border-color: #f59e0b; color: #f59e0b;">
+                                        <i class="fas fa-file-image"></i> Logo (PNG)
+                                    </a>
+                                    <a href="https://kavablox.github.io/Kawa-Moreira-Portfolio/ETEC3ADM/Neve%20Encantada/Documentos/White%20and%20Blue%20Illustrative%20Playfull%20Ice%20Cream%20Logo%20(1).pdf" class="btn btn-outline" style="border-color: #f59e0b; color: #f59e0b;">
+                                        <i class="fas fa-file-pdf"></i> Logo (PDF)
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Sociologia Section -->
+        <section class="section section-socio">
+            <div class="section-header">
+                <div class="section-icon icon-socio">
+                    <i class="fas fa-users"></i>
+                </div>
+                <div class="section-title">
+                    <h2>Projeto de Sociologia</h2>
+                    <p>Consciência Negra - Website Educativo</p>
+                </div>
+            </div>
+            
+            <div class="project-cards">
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Website Consciência Negra</h3>
+                        <p>Projeto interdisciplinar sobre diversidade e história</p>
+                    </div>
+                    <div class="project-body">
+                        <p>Website educativo desenvolvido para a disciplina de Sociologia, abordando a importância da Consciência Negra, história da cultura afro-brasileira, personalidades importantes e a luta contra o racismo.</p>
+                        <p>O projeto visa promover reflexão e conscientização sobre a diversidade étnico-racial e sua importância na formação da sociedade brasileira.</p>
+                        <div class="project-links">
+                            <a href="https://kavablox.github.io/Kawa-Moreira-Portfolio/ETEC3ADM/Consci%C3%AAncia%20Negra/Consciencia_Negra_website.html" class="btn btn-socio">
+                                <i class="fas fa-external-link-alt"></i> Acessar Website
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <p>Projetos desenvolvidos por <strong>Kawã Fernandes Moreira</strong> durante o 3º ano do curso técnico em Administração</p>
+            <p>ETEC de Carapicuíba | 2025</p>
+            <p>Repositório: <a href="https://github.com/KavaBlox/Kawa-Moreira-Portfolio" class="github-link" target="_blank">github.com/KavaBlox/Kawa-Moreira-Portfolio</a></p>
+            <p style="margin-top: 20px; font-size: 0.9rem;">© 2025 - Todos os projetos são de caráter educacional</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Adiciona animação de entrada para as seções
+            const sections = document.querySelectorAll('.section');
+            
+            sections.forEach((section, index) => {
+                section.style.opacity = '0';
+                section.style.transform = 'translateY(20px)';
+                
+                setTimeout(() => {
+                    section.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                    section.style.opacity = '1';
+                    section.style.transform = 'translateY(0)';
+                }, 100 * index);
+            });
+            
+            // Adiciona interatividade aos cards
+            const cards = document.querySelectorAll('.project-card');
+            
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    const icon = this.querySelector('.section-icon i');
+                    if (icon) {
+                        icon.style.transform = 'scale(1.1)';
+                        icon.style.transition = 'transform 0.3s ease';
+                    }
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    const icon = this.querySelector('.section-icon i');
+                    if (icon) {
+                        icon.style.transform = 'scale(1)';
+                    }
+                });
+            });
+            
+            console.log("Página 2025 - Projetos do 3º Ano ADM");
+            console.log("TCC: GrainShield Brasil");
+            console.log("APS: Neve Encantada Gelatto");
+            console.log("Sociologia: Consciência Negra");
+        });
+    </script>
+</body>
+</html>
