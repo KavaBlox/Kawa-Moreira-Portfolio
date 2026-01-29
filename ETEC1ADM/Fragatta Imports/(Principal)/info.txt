@@ -1,0 +1,65 @@
+- Página inicial:
+V1:
+https://web.archive.org/web/20230811135920/https://www.fragattaimports.website/
+
+V2:
+https://web.archive.org/web/20231030154848/https://www.fragattaimports.website/
+
+- Sobre:
+https://web.archive.org/web/20230804151035/https://www.fragattaimports.website/blank-1
+
+- Estoque:
+https://web.archive.org/web/20230804151122/https://www.fragattaimports.website/category/all-products
+
+- Portfólio:
+https://web.archive.org/web/20230809190142/https://www.fragattaimports.website/portfolio
+
+- Produtos:
+Genesis G90
+https://web.archive.org/web/20230809190401/https://www.fragattaimports.website/product-page/genesis-g90-2023
+
+Ferrari Purosangue 2024
+https://web.archive.org/web/20230809190512/https://www.fragattaimports.website/product-page/ferrari-purosangue-2024
+
+Shelby Cobra Backdraft 1965
+https://web.archive.org/web/20230809190604/https://www.fragattaimports.website/product-page/shelby-cobra-backdraft-1965
+
+Porsche 911T Coupé 1971
+https://web.archive.org/web/20230809191341/https://www.fragattaimports.website/product-page/porsche-911t-coup%C3%A9-1971
+
+Mercedes-Benz 300 SL Gullwing 1956
+https://web.archive.org/web/20230809204310/https://www.fragattaimports.website/product-page/mercedes-benz-300-sl-gullwing-1956
+
+Mercedes-Benz 190 SL Roadster 1959
+https://web.archive.org/web/20230809204330/https://www.fragattaimports.website/product-page/mercedes-benz-190-sl-roadster-1959
+
+Ford Galaxie 1967
+https://web.archive.org/web/20230809204348/https://www.fragattaimports.website/product-page/ford-galaxie-1967
+
+(Pagamento)
+https://web.archive.org/web/20230809190405/https://www.fragattaimports.website/_api/payment-services-web/payments/v2/accounts/1380b703-ce81-ff05-f115-39571d94dfcd:c26e1e2a-de5d-4515-8c86-1a530b72c34e/bnpl/payment-methods?amount=1350000&language=pt&currency=BRL
+
+https://web.archive.org/web/20230809190606/https://www.fragattaimports.website/_api/payment-services-web/payments/v2/accounts/1380b703-ce81-ff05-f115-39571d94dfcd:c26e1e2a-de5d-4515-8c86-1a530b72c34e/bnpl/payment-methods?amount=2100000&language=pt&currency=BRL
+
+https://web.archive.org/web/20230809204313/https://www.fragattaimports.website/_api/payment-services-web/payments/v2/accounts/1380b703-ce81-ff05-f115-39571d94dfcd:c26e1e2a-de5d-4515-8c86-1a530b72c34e/bnpl/payment-methods?amount=21750000&language=pt&currency=BRL
+
+https://web.archive.org/web/20230809204334/https://www.fragattaimports.website/_api/payment-services-web/payments/v2/accounts/1380b703-ce81-ff05-f115-39571d94dfcd:c26e1e2a-de5d-4515-8c86-1a530b72c34e/bnpl/payment-methods?amount=2800000&language=pt&currency=BRL
+
+https://web.archive.org/web/20230809191348/https://www.fragattaimports.website/_api/payment-services-web/payments/v2/accounts/1380b703-ce81-ff05-f115-39571d94dfcd:c26e1e2a-de5d-4515-8c86-1a530b72c34e/bnpl/payment-methods?amount=3100000&language=pt&currency=BRL
+
+https://web.archive.org/web/20230809190516/https://www.fragattaimports.website/_api/payment-services-web/payments/v2/accounts/1380b703-ce81-ff05-f115-39571d94dfcd:c26e1e2a-de5d-4515-8c86-1a530b72c34e/bnpl/payment-methods?amount=5200000&language=pt&currency=BRL
+
+https://web.archive.org/web/20230809204351/https://www.fragattaimports.website/_api/payment-services-web/payments/v2/accounts/1380b703-ce81-ff05-f115-39571d94dfcd:c26e1e2a-de5d-4515-8c86-1a530b72c34e/bnpl/payment-methods?amount=525000&language=pt&currency=BRL
+
+https://web.archive.org/web/20230809204311/https://www.fragattaimports.website/_api/tag-manager/api/v1/tags/sites/e59b5975-9f9c-4473-aede-1cb090c0b8f9?wixSite=false&htmlsiteId=9c76b914-b698-402f-ae2a-5c27f0cdc7e5&language=en&partytown=false
+
+https://web.archive.org/web/20230809204310/https://www.fragattaimports.website/_api/v2/dynamicmodel
+
+https://web.archive.org/web/20230809204313/https://www.fragattaimports.website/_serverless/payments-checkout-server/payment-methods-banner-settings
+
+
+
+
+
+
+
