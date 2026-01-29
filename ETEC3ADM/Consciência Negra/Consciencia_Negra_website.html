@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consciência Negra - 20 de Novembro</title>
+    <style>
+        :root {
+            --verde: #008000;
+            --preto: #000000;
+            --vermelho: #FF0000;
+            --amarelo: #FFD700;
+            --branco: #FFFFFF;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--preto);
+            color: var(--branco);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background-color: var(--preto);
+            padding: 40px 0;
+            text-align: center;
+            border-bottom: 5px solid var(--vermelho);
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            color: var(--verde);
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        h2 {
+            font-size: 1.8rem;
+            color: var(--vermelho);
+            margin-bottom: 20px;
+        }
+        
+        .subtitle {
+            font-size: 1.5rem;
+            color: var(--branco);
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        
+        .info-institucional {
+            background-color: var(--amarelo);
+            color: var(--preto);
+            padding: 15px 0;
+            text-align: center;
+            font-weight: bold;
+            margin-top: 20px;
+            border-radius: 5px;
+        }
+        
+        section {
+            padding: 60px 0;
+        }
+        
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="%23000"/><path d="M30,30 L70,30 L70,70 L30,70 Z" stroke="%23008000" stroke-width="2" fill="none"/><path d="M40,40 L60,40 L60,60 L40,60 Z" stroke="%23FF0000" stroke-width="2" fill="none"/></svg>');
+            background-size: cover;
+            text-align: center;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+        
+        .content-section {
+            background-color: var(--preto);
+        }
+        
+        .content-block {
+            margin-bottom: 40px;
+        }
+        
+        .content-block h3 {
+            color: var(--verde);
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            border-left: 4px solid var(--vermelho);
+            padding-left: 15px;
+        }
+        
+        .content-block ul {
+            list-style-type: none;
+            padding-left: 20px;
+        }
+        
+        .content-block li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 25px;
+        }
+        
+        .content-block li:before {
+            content: "•";
+            color: var(--amarelo);
+            font-size: 1.5rem;
+            position: absolute;
+            left: 0;
+            top: -5px;
+        }
+        
+        .content-block p {
+            margin-bottom: 15px;
+        }
+        
+        .highlight {
+            color: var(--amarelo);
+            font-weight: bold;
+        }
+        
+        .call-to-action {
+            background-color: var(--vermelho);
+            padding: 60px 0;
+            text-align: center;
+        }
+        
+        .call-to-action h3 {
+            color: var(--branco);
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        
+        .call-to-action p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+        
+        .symbol {
+            text-align: center;
+            margin: 30px 0;
+        }
+        
+        .symbol-icon {
+            font-size: 4rem;
+            color: var(--verde);
+            margin-bottom: 20px;
+        }
+        
+        footer {
+            background-color: var(--preto);
+            color: var(--branco);
+            text-align: center;
+            padding: 30px 0;
+            border-top: 5px solid var(--verde);
+        }
+        
+        footer p {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+        
+        /* Estilos para impressão */
+        @media print {
+            body {
+                background-color: var(--preto) !important;
+                color: var(--branco) !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            
+            header, .content-section, footer {
+                background-color: var(--preto) !important;
+                color: var(--branco) !important;
+            }
+            
+            .call-to-action {
+                background-color: var(--vermelho) !important;
+                color: var(--branco) !important;
+            }
+            
+            .info-institucional {
+                background-color: var(--amarelo) !important;
+                color: var(--preto) !important;
+            }
+            
+            h1 {
+                color: var(--verde) !important;
+            }
+            
+            h2 {
+                color: var(--vermelho) !important;
+            }
+            
+            .content-block h3 {
+                color: var(--verde) !important;
+            }
+            
+            .highlight {
+                color: var(--amarelo) !important;
+            }
+            
+            .content-block li:before {
+                color: var(--amarelo) !important;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+            }
+            
+            section {
+                padding: 40px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>CONSCIÊNCIA NEGRA</h1>
+            <h2>20 de Novembro – Dia da Resistência e da Liberdade</h2>
+            <p class="subtitle">Romper Correntes, Construir Futuro</p>
+            
+            <div class="info-institucional">
+                <p>ETEC de Carapicuíba | 3º ADMINISTRAÇÃO</p>
+                <p>Kawã Fernandes da Silva Moreira | Sociologia</p>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container hero-content">
+            <div class="symbol">
+                <div class="symbol-icon">🔗✊</div>
+            </div>
+            <p>A imagem das mãos rompendo correntes representa a luta histórica da população negra no Brasil: uma jornada de resistência, coragem e superação frente à escravidão, ao racismo e às desigualdades que persistem até hoje. Celebrar a Consciência Negra é reconhecer essa trajetória e fortalecer o compromisso com um país mais justo.</p>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="container">
+            <div class="content-block">
+                <h3>Por que o Dia da Consciência Negra existe?</h3>
+                <ul>
+                    <li>Marca a morte de Zumbi dos Palmares, símbolo da luta pela liberdade.</li>
+                    <li>Resgata a memória e a contribuição do povo negro na formação do Brasil.</li>
+                    <li>Incentiva debates sobre racismo, igualdade, inclusão e direitos humanos.</li>
+                </ul>
+            </div>
+
+            <div class="content-block">
+                <h3>A Luta Continua</h3>
+                <p>Mesmo após a abolição, muitas <span class="highlight">"correntes" sociais</span> ainda precisam ser quebradas: racismo estrutural, desigualdade de oportunidades, violência e discriminação e invisibilização da cultura e da história negra.</p>
+            </div>
+
+            <div class="content-block">
+                <h3>Herança, Cultura e Orgulho</h3>
+                <p>A população negra é protagonista em arte, música, literatura, moda, ciência, política e movimentos sociais. Honrar essa herança é valorizar nossa identidade brasileira.</p>
+            </div>
+
+            <div class="content-block">
+                <h3>O Que Cada Um Pode Fazer?</h3>
+                <ul>
+                    <li>Combater racismo</li>
+                    <li>Apoiar projetos negros</li>
+                    <li>Estudar história afro-brasileira</li>
+                    <li>Denunciar discriminação</li>
+                    <li>Promover respeito e empatia</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="call-to-action">
+        <div class="container">
+            <h3>Consciência Negra é todo dia</h3>
+            <p>Um chamado para romper as correntes da intolerância e construir um futuro baseado em igualdade, respeito e humanidade.</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>Consciência Negra - 20 de Novembro</p>
+            <p>Romper Correntes, Construir Futuro</p>
+            <p>ETEC de Carapicuíba | 3º ADMINISTRAÇÃO | Sociologia</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,1046 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GrainShield Brasil - Soluções em Proteção de Grãos</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Reset e configurações gerais */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        :root {
+            --primary: #2e7d32;
+            --primary-dark: #1b5e20;
+            --secondary: #ff9800;
+            --light: #f5f5f5;
+            --dark: #333;
+            --gray: #757575;
+            --light-gray: #e0e0e0;
+        }
+        
+        body {
+            color: var(--dark);
+            line-height: 1.6;
+            background-color: #f9f9f9;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Header e Navegação */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo-icon {
+            color: var(--primary);
+            font-size: 28px;
+        }
+        
+        .logo h1 {
+            font-size: 24px;
+            color: var(--primary);
+            font-weight: 700;
+        }
+        
+        .logo span {
+            color: var(--secondary);
+            font-weight: 600;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: var(--primary);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--primary);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1589923186741-b7d59d6b2c4d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 160px 0 100px;
+            text-align: center;
+            margin-top: 70px;
+        }
+        
+        .hero h2 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .hero p {
+            font-size: 18px;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--secondary);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background-color: #e68900;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .btn-primary {
+            background-color: var(--primary);
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+        }
+        
+        .btn-test {
+            background-color: #ff5722;
+        }
+        
+        .btn-test:hover {
+            background-color: #e64a19;
+        }
+        
+        /* Seções gerais */
+        section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-title h2 {
+            font-size: 36px;
+            color: var(--primary);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 70px;
+            height: 3px;
+            background-color: var(--secondary);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .section-title p {
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        /* Destaque Teste Gratuito */
+        .test-highlight {
+            background: linear-gradient(135deg, #ff9800 0%, #ff5722 100%);
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            margin-top: -1px;
+        }
+        
+        .test-highlight .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .test-highlight h3 {
+            font-size: 24px;
+            margin: 0;
+        }
+        
+        .test-highlight p {
+            margin: 0;
+            font-size: 18px;
+            font-weight: 600;
+        }
+        
+        .test-highlight .btn {
+            background-color: white;
+            color: #ff5722;
+            font-weight: 700;
+        }
+        
+        .test-highlight .btn:hover {
+            background-color: #f5f5f5;
+            transform: translateY(-3px);
+        }
+        
+        /* Problema Section */
+        .problem-stats {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 20px;
+            width: 200px;
+            margin: 15px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+        
+        .stat-item:hover {
+            transform: translateY(-10px);
+        }
+        
+        .stat-icon {
+            font-size: 40px;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        .stat-number {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+        
+        .stat-text {
+            color: var(--gray);
+            font-size: 14px;
+        }
+        
+        /* Solução Section */
+        .solution-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            margin-top: 40px;
+        }
+        
+        .solution-text {
+            flex: 1;
+        }
+        
+        .solution-image {
+            flex: 1;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .solution-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .solution-list {
+            margin-top: 20px;
+        }
+        
+        .solution-list li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .solution-list i {
+            color: var(--primary);
+            margin-right: 10px;
+            margin-top: 5px;
+        }
+        
+        /* Proposta Marketing Section */
+        .marketing-proposal {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .marketing-proposal .section-title h2 {
+            color: white;
+        }
+        
+        .marketing-proposal .section-title p {
+            color: rgba(255,255,255,0.8);
+        }
+        
+        .proposal-cards {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .proposal-card {
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 8px;
+            padding: 30px;
+            width: 350px;
+            text-align: center;
+            transition: transform 0.3s;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .proposal-card:hover {
+            transform: translateY(-10px);
+            background-color: rgba(255,255,255,0.15);
+        }
+        
+        .proposal-card.featured {
+            background-color: rgba(255, 152, 0, 0.2);
+            border: 2px solid var(--secondary);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .proposal-card.featured::before {
+            content: "MAIS POPULAR";
+            position: absolute;
+            top: 15px;
+            right: -30px;
+            background-color: var(--secondary);
+            color: white;
+            padding: 5px 30px;
+            font-size: 12px;
+            font-weight: 700;
+            transform: rotate(45deg);
+        }
+        
+        .proposal-icon {
+            font-size: 50px;
+            margin-bottom: 20px;
+            color: var(--secondary);
+        }
+        
+        .proposal-card h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+        
+        .proposal-card ul {
+            list-style: none;
+            text-align: left;
+            margin: 20px 0;
+        }
+        
+        .proposal-card ul li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .proposal-card ul li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--secondary);
+            font-weight: bold;
+        }
+        
+        .proposal-price {
+            font-size: 32px;
+            font-weight: 700;
+            margin: 20px 0;
+            color: var(--secondary);
+        }
+        
+        .proposal-price span {
+            font-size: 16px;
+            font-weight: normal;
+            color: rgba(255,255,255,0.7);
+        }
+        
+        /* Produtos Section */
+        .products {
+            background-color: var(--light);
+        }
+        
+        .product-cards {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .product-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            width: 300px;
+            transition: transform 0.3s;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .product-img {
+            height: 200px;
+            background-color: #e0e0e0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-size: 60px;
+        }
+        
+        .product-info {
+            padding: 25px;
+        }
+        
+        .product-info h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+        
+        /* Empresa Section */
+        .company-info {
+            display: flex;
+            gap: 50px;
+            margin-top: 40px;
+            align-items: center;
+        }
+        
+        .company-details {
+            flex: 1;
+        }
+        
+        .company-logo {
+            flex: 1;
+            text-align: center;
+        }
+        
+        .company-logo .logo-icon {
+            font-size: 120px;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .info-item {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .info-item i {
+            color: var(--primary);
+            margin-right: 15px;
+            margin-top: 5px;
+        }
+        
+        /* Contato Section */
+        .contact {
+            background-color: var(--light);
+        }
+        
+        .contact-container {
+            display: flex;
+            gap: 50px;
+            margin-top: 40px;
+        }
+        
+        .contact-info {
+            flex: 1;
+        }
+        
+        .contact-form {
+            flex: 1;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid var(--light-gray);
+            border-radius: 5px;
+            font-size: 16px;
+            transition: border 0.3s;
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+        
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 60px 0 30px;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column {
+            width: 30%;
+            min-width: 250px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-column h3 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: var(--secondary);
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-column ul li a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-column ul li a:hover {
+            color: var(--secondary);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--secondary);
+            transform: translateY(-5px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #aaa;
+            font-size: 14px;
+        }
+        
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.7);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .modal-content {
+            background-color: white;
+            width: 90%;
+            max-width: 600px;
+            border-radius: 10px;
+            overflow: hidden;
+            animation: modalFade 0.3s;
+        }
+        
+        @keyframes modalFade {
+            from {opacity: 0; transform: translateY(-50px);}
+            to {opacity: 1; transform: translateY(0);}
+        }
+        
+        .modal-header {
+            background-color: var(--primary);
+            color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .modal-header h3 {
+            margin: 0;
+            font-size: 24px;
+        }
+        
+        .close-modal {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 28px;
+            cursor: pointer;
+            line-height: 1;
+        }
+        
+        .modal-body {
+            padding: 30px;
+        }
+        
+        .modal-form .form-group {
+            margin-bottom: 20px;
+        }
+        
+        /* Responsividade */
+        @media (max-width: 992px) {
+            .solution-content, .company-info, .contact-container {
+                flex-direction: column;
+            }
+            
+            .solution-image, .company-logo {
+                order: -1;
+            }
+            
+            .footer-column {
+                width: 45%;
+            }
+            
+            .proposal-card {
+                width: 100%;
+                max-width: 400px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                padding: 15px 0;
+            }
+            
+            .logo {
+                margin-bottom: 15px;
+            }
+            
+            nav {
+                width: 100%;
+                display: none;
+            }
+            
+            nav.active {
+                display: block;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                width: 100%;
+            }
+            
+            nav ul li {
+                margin: 0;
+                text-align: center;
+                padding: 10px 0;
+                border-bottom: 1px solid var(--light-gray);
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+                position: absolute;
+                top: 20px;
+                right: 20px;
+            }
+            
+            .hero h2 {
+                font-size: 32px;
+            }
+            
+            .section-title h2 {
+                font-size: 28px;
+            }
+            
+            .footer-column {
+                width: 100%;
+            }
+            
+            .hero {
+                padding: 140px 0 80px;
+            }
+            
+            .test-highlight .container {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .stat-item {
+                width: 100%;
+                max-width: 250px;
+            }
+            
+            .hero h2 {
+                font-size: 28px;
+            }
+            
+            .btn {
+                padding: 10px 20px;
+                font-size: 14px;
+            }
+            
+            .proposal-card.featured::before {
+                font-size: 10px;
+                right: -35px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header e Navegação -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <i class="fas fa-shield-alt logo-icon"></i>
+                <h1>Grain<span>Shield</span> Brasil</h1>
+            </div>
+            
+            <div class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </div>
+            
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="#inicio">Início</a></li>
+                    <li><a href="#problema">O Problema</a></li>
+                    <li><a href="#solucao">Solução</a></li>
+                    <li><a href="#marketing">Teste Grátis</a></li>
+                    <li><a href="#produtos">Produtos</a></li>
+                    <li><a href="#empresa">Empresa</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <div class="container">
+            <h2>Proteção Inteligente para o Transporte de Grãos</h2>
+            <p>Reduza em até 77% as perdas de soja e milho no transporte rodoviário com nossos sistemas de vedação especializados. Soluções inovadoras para um agronegócio mais eficiente e sustentável.</p>
+            <a href="#marketing" class="btn btn-test">TESTE 10 VIAGENS GRÁTIS</a>
+            <a href="#solucao" class="btn">Conheça Nossa Solução</a>
+        </div>
+    </section>
+
+    <!-- Destaque Teste Gratuito -->
+    <div class="test-highlight">
+        <div class="container">
+            <h3>OFERTA ESPECIAL:</h3>
+            <p>10 VIAGENS DE TESTE GRATUITAS para comprovar a eficácia do nosso sistema!</p>
+            <a href="#marketing" class="btn">QUERO MEU TESTE GRÁTIS</a>
+        </div>
+    </div>
+
+    <!-- Problema Section -->
+    <section id="problema">
+        <div class="container">
+            <div class="section-title">
+                <h2>O Problema das Perdas de Grãos</h2>
+                <p>O Brasil perde bilhões de reais anualmente com o desperdício de grãos durante o transporte rodoviário, especialmente em corredores estratégicos como a BR-163.</p>
+            </div>
+            
+            <div class="problem-stats">
+                <div class="stat-item">
+                    <i class="fas fa-weight-hanging stat-icon"></i>
+                    <div class="stat-number">10 mi t</div>
+                    <div class="stat-text">Perdas anuais de grãos</div>
+                </div>
+                
+                <div class="stat-item">
+                    <i class="fas fa-dollar-sign stat-icon"></i>
+                    <div class="stat-number">R$ 3 bi</div>
+                    <div class="stat-text">Prejuízos anuais</div>
+                </div>
+                
+                <div class="stat-item">
+                    <i class="fas fa-road stat-icon"></i>
+                    <div class="stat-number">2,5%</div>
+                    <div class="stat-text">Perdas na BR-163</div>
+                </div>
+                
+                <div class="stat-item">
+                    <i class="fas fa-truck stat-icon"></i>
+                    <div class="stat-number">56 kg</div>
+                    <div class="stat-text">Perda média por viagem</div>
+                </div>
+            </div>
+            
+            <div style="margin-top: 50px; padding: 30px; background-color: #f0f7f0; border-radius: 8px;">
+                <h3 style="color: var(--primary); margin-bottom: 15px;">Principais Causas</h3>
+                <div style="display: flex; flex-wrap: wrap; gap: 20px;">
+                    <div style="flex: 1; min-width: 250px;">
+                        <h4 style="color: var(--primary-dark); margin-bottom: 10px;"><i class="fas fa-truck" style="margin-right: 8px;"></i>Vedação Inadequada</h4>
+                        <p>Carrocerias com lonas desgastadas e sistemas de vedação precários permitem o vazamento de grãos durante o transporte.</p>
+                    </div>
+                    <div style="flex: 1; min-width: 250px;">
+                        <h4 style="color: var(--primary-dark); margin-bottom: 10px;"><i class="fas fa-road" style="margin-right: 8px;"></i>Infraestrutura Precária</h4>
+                        <p>Apenas 12,4% das rodovias brasileiras estão adequadamente pavimentadas, intensificando vibrações e solavancos.</p>
+                    </div>
+                    <div style="flex: 1; min-width: 250px;">
+                        <h4 style="color: var(--primary-dark); margin-bottom: 10px;"><i class="fas fa-clipboard-list" style="margin-right: 8px;"></i>Falhas Logísticas</h4>
+                        <p>Planejamento insuficiente de rotas, falta de capacitação de motoristas e dependência excessiva do modal rodoviário.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solução Section -->
+    <section id="solucao" style="background-color: #f9f9f9;">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nossa Solução</h2>
+                <p>A GrainShield oferece sistemas de vedação especializados que reduzem drasticamente as perdas de grãos durante o transporte rodoviário.</p>
+            </div>
+            
+            <div class="solution-content">
+                <div class="solution-text">
+                    <h3 style="color: var(--primary); margin-bottom: 20px; font-size: 28px;">Tecnologia que Protege sua Carga</h3>
+                    <p>Desenvolvemos lonas de proteção e sistemas de vedação com materiais de alta resistência, especificamente projetados para o transporte de grãos a granel.</p>
+                    
+                    <div class="solution-list">
+                        <ul style="list-style: none;">
+                            <li><i class="fas fa-check-circle"></i> <strong>Redução de até 77% nas perdas</strong> - Comprovada em estudo de caso com transportadora de grãos</li>
+                            <li><i class="fas fa-check-circle"></i> <strong>Materiais duráveis</strong> - PVC vinílico de 300-600 micras com revestimento de poliéster</li>
+                            <li><i class="fas fa-check-circle"></i> <strong>Resistência e impermeabilidade</strong> - Proteção anti-UV e contra intempéries</li>
+                            <li><i class="fas fa-check-circle"></i> <strong>Custo-benefício superior</strong> - Vida útil de 2-3 anos, economizando em substituições</li>
+                            <li><i class="fas fa-check-circle"></i> <strong>Instalação especializada</strong> - Equipe técnica treinada para máxima eficiência</li>
+                        </ul>
+                    </div>
+                    
+                    <div style="margin-top: 30px; padding: 20px; background-color: #fff8e1; border-radius: 8px; border-left: 4px solid var(--secondary);">
+                        <h4 style="color: #ff5722; margin-bottom: 10px;"><i class="fas fa-gift" style="margin-right: 8px;"></i> Experimente sem compromisso!</h4>
+                        <p>Oferecemos <strong>10 viagens de teste gratuitas</strong> para que você comprove os resultados antes de qualquer compromisso financeiro.</p>
+                        <a href="#marketing" class="btn btn-test" style="margin-top: 10px;">Quero meu teste grátis</a>
+                    </div>
+                </div>
+                
+                <div class="solution-image">
+                    <div style="background-color: #e0e0e0; height: 100%; display: flex; align-items: center; justify-content: center; color: var(--primary); font-size: 100px;">
+                        <i class="fas fa-truck-loading"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Proposta de Marketing Section -->
+    <section id="marketing" class="marketing-proposal">
+        <div class="container">
+            <div class="section-title">
+                <h2>Experimente sem Risco!</h2>
+                <p>Nossa proposta de marketing exclusiva: 10 viagens de teste gratuitas para você comprovar a eficácia do nosso sistema.</p>
+            </div>
+            
+            <div class="proposal-cards">
+                <div class="proposal-card">
+                    <div class="proposal-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Teste Inicial</h3>
+                    <p>Ideal para conhecer nossa solução</p>
+                    
+                    <ul>
+                        <li>10 viagens de teste gratuitas</li>
+                        <li>Instalação gratuita do sistema</li>
+                        <li>Suporte técnico durante o período</li>
+                        <li>Análise de resultados comparativos</li>
+                        <li>Sem contrato de fidelidade</li>
+                    </ul>
+                    
+                    <div class="proposal-price">GRÁTIS<span> para as 10 primeiras viagens</span></div>
+                    
+                    <button class="btn" onclick="openTestModal()">Quero testar grátis</button>
+                </div>
+                
+                <div class="proposal-card featured">
+                    <div class="proposal-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3>Pacote Completo</h3>
+                    <p>Mais vendido - Melhor custo-benefício</p>
+                    
+                    <ul>
+                        <li>Todos os benefícios do Teste Inicial</li>
+                        <li>Desconto de 20% na primeira compra</li>
+                        <li>Garantia estendida de 3 anos</li>
+                        <li>Manutenção preventiva gratuita por 1 ano</li>
+                        <li>Prioridade no suporte técnico</li>
+                        <li>Treinamento para equipe de motoristas</li>
+                    </ul>
+                    
+                    <div class="proposal-price">R$ 32/m²<span> após o período de teste</span></div>
+                    
+                    <button class="btn btn-test" onclick="openTestModal()">Quero este pacote</button>
+                </div>
+                
+                <div class="proposal-card">
+                    <div class="proposal-icon">
+                        <i class="fas fa-industry"></i>
+                    </div>
+                    <h3>Para Empresas</h3>
+                    <p>Solução corporativa completa</p>
+                    
+                    <ul>
+                        <li>Teste gratuito para toda frota</li>
+                        <li>Personalização do sistema</li>
+                        <li>Relatórios mensais de performance</li>
+                        <li>Consultoria logística inclusa</li>
+                        <li>Contrato flexível</li>
+                        <li>Descontos progressivos</li>
+                    </ul>
+                    
+                    <div class="proposal-price">Sob consulta<span> plano personalizado</span></div>
+                    
+                    <button class="btn" onclick="openTestModal()">Falar com consultor</button>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 50px; padding: 25px; background-color: rgba(255,255,255,0.1); border-radius: 8px;">
+                <h3 style="color: var(--secondary); margin-bottom: 15px;">Como funciona o teste gratuito?</h3>
+                <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 30px; margin-top: 20px;">
+                    <div style="flex: 1; min-width: 200px; text-align: center;">
+                        <div style="background-color: rgba(255,255,255,0.2); width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px; font-size: 24px; font-weight: bold;">1</div>
+                        <h4 style="margin-bottom: 10px;">Solicitação</h4>
+                        <p>Você solicita o teste gratuito através do nosso site ou telefone.</p>
+                    </div>
+                    <div style="flex: 1; min-width: 200px; text-align: center;">
+                        <div style="background-color: rgba(255,255,255,0.2); width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px; font-size: 24px; font-weight: bold;">2</div>
+                        <h4 style="margin-bottom: 10px;">Instalação</h4>
+                        <p>Nossa equipe técnica instala o sistema em seus caminhões gratuitamente.</p>
+                    </div>
+                    <div style="flex: 1; min-width: 200px; text-align: center;">
+                        <div style="background-color: rgba(255,255,255,0.2); width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px; font-size: 24px; font-weight: bold;">3</div>
+                        <h4 style="margin-bottom: 10px;">Teste</h4>
+                        <p>Você realiza 10 viagens normalmente enquanto medimos as perdas.</p>
+                    </div>
+                    <div style="flex: 1; min-width: 200px; text-align: center;">
+                        <div style="background-color: rgba(255,255,255,0.2); width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px; font-size: 24px; font-weight: bold;">4</div>
+                        <h4 style="margin-bottom: 10px;">Decisão</h4>
+                        <p>Após comprovar os resultados, você decide se contrata nossos serviços.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Produtos Section -->
+    <section id="produtos" class="products">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nossos Produtos</h2>
+                <p>Soluções especializadas para proteção e vedação de cargas no transporte de grãos.</p>
+            </div>
+            
+            <div class="product-cards">
+                <div class="product-card">
+                    <div class="product-img">
+                        <i class="fas fa-vest-patches"></i>
+                    </div>
+                    <div class="product-info">
+                        <h3>Lonas de Proteção PVC</h3>
+                        <p>Lonas pesadas em PVC vinílico com revestimento de poliéster, impermeáveis e anti-UV, com espessura de 300-600 micras. Ideal para transporte de grãos a granel.</p>
+                        <div style="margin-top: 15px; color: var(--primary); font-weight: 600;">
+                            <i class="fas fa-ruler-combined"></i> Dimensões personalizadas
