@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neve Encantada Gelatto - Sorvetes Artesanais</title>
+    <style>
+        :root {
+            --primary: #a5d8ff;
+            --secondary: #ffb6c1;
+            --accent: #c8a2c8;
+            --dark: #333;
+            --light: #fff;
+            --text: #444;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f9f9f9;
+            color: var(--text);
+            line-height: 1.6;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: var(--light);
+            padding: 1rem;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .logo {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+        }
+        
+        .tagline {
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+        
+        nav {
+            background-color: var(--light);
+            padding: 0.5rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+        
+        nav li {
+            margin: 0 1rem;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        nav a:hover {
+            background-color: var(--primary);
+            color: var(--light);
+        }
+        
+        section {
+            padding: 3rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        h1, h2, h3 {
+            color: var(--dark);
+            margin-bottom: 1.5rem;
+        }
+        
+        h2 {
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 0.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .hero {
+            background: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="%23a5d8ff"/><circle cx="50" cy="50" r="40" fill="%23ffb6c1" opacity="0.5"/></svg>');
+            background-size: cover;
+            text-align: center;
+            padding: 4rem 2rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            color: var(--dark);
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--accent);
+            color: var(--light);
+            padding: 0.8rem 1.5rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+        }
+        
+        .btn:hover {
+            background-color: var(--primary);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+        
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .card {
+            background-color: var(--light);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .card-content {
+            padding: 1.5rem;
+        }
+        
+        .card h3 {
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+        
+        .flavors {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .flavor {
+            background-color: var(--primary);
+            color: var(--dark);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .team-member {
+            text-align: center;
+            padding: 1.5rem;
+            background-color: var(--light);
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        .team-member h3 {
+            margin-bottom: 0.5rem;
+        }
+        
+        .team-member p {
+            color: var(--accent);
+            font-weight: 500;
+        }
+        
+        .contact-info {
+            background-color: var(--light);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            margin-top: 2rem;
+        }
+        
+        .contact-info p {
+            margin-bottom: 1rem;
+        }
+        
+        footer {
+            background-color: var(--dark);
+            color: var(--light);
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+        
+        .social-links a {
+            color: var(--light);
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            color: var(--primary);
+        }
+        
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav li {
+                margin: 0.5rem 0;
+            }
+            
+            section {
+                padding: 2rem 1rem;
+            }
+            
+            .hero {
+                padding: 2rem 1rem;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">Neve Encantada Gelatto</div>
+        <p class="tagline">Sorvetes Artesanais e Experiências Afetivas</p>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#produtos">Produtos</a></li>
+            <li><a href="#equipe">Equipe</a></li>
+            <li><a href="#localizacao">Localização</a></li>
+            <li><a href="#contato">Contato</a></li>
+        </ul>
+    </nav>
+    
+    <section id="sobre">
+        <div class="hero">
+            <h1>Bem-vindo à Neve Encantada Gelatto</h1>
+            <p>Proporcionamos momentos de bem-estar, conforto e nostalgia por meio de sorvetes artesanais de alta qualidade, oferecidos em um ambiente acolhedor, familiar e acessível.</p>
+            <a href="#produtos" class="btn">Conheça Nossos Sabores</a>
+        </div>
+        
+        <h2>Sobre Nossa Empresa</h2>
+        <div class="card-container">
+            <div class="card">
+                <div class="card-content">
+                    <h3>Nossa Missão</h3>
+                    <p>Proporcionar momentos de bem-estar, conforto e nostalgia por meio de sorvetes artesanais de alta qualidade, oferecidos em um ambiente acolhedor, familiar e acessível.</p>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-content">
+                    <h3>Nossa Visão</h3>
+                    <p>Ser referência regional em sorvetes artesanais e experiências afetivas, reconhecida pela variedade, sabor, atendimento humano e ambiente acolhedor, expandindo a marca de forma sustentável.</p>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-content">
+                    <h3>Nossos Valores</h3>
+                    <ul>
+                        <li>Atendimento humanizado</li>
+                        <li>Família e convivência</li>
+                        <li>Qualidade e sabor</li>
+                        <li>Variedade e criatividade</li>
+                        <li>Sustentabilidade</li>
+                        <li>Simplicidade</li>
+                        <li>Bem-estar e experiência positiva</li>
+                        <li>Respeito ao cliente e à comunidade</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="produtos">
+        <h2>Nossos Produtos</h2>
+        
+        <div class="card-container">
+            <div class="card">
+                <div class="card-content">
+                    <h3>Sorvetes Artesanais</h3>
+                    <p>Nossos sorvetes de massa são feitos com ingredientes selecionados e receitas exclusivas:</p>
+                    <div class="flavors">
+                        <span class="flavor">Chocolate</span>
+                        <span class="flavor">Morango</span>
+                        <span class="flavor">Baunilha</span>
+                        <span class="flavor">Flocos</span>
+                        <span class="flavor">Chocomenta</span>
+                        <span class="flavor">Abacaxi ao Vinho</span>
+                    </div>
+                    <p style="margin-top: 1rem;"><strong>Preço:</strong> R$ 5,75 a R$ 6,00</p>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-content">
+                    <h3>Picolés Variados</h3>
+                    <p>Picolés artesanais em diversos sabores para todos os gostos.</p>
+                    <p><strong>Preço:</strong> R$ 5,00</p>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-content">
+                    <h3>Acompanhamentos</h3>
+                    <ul>
+                        <li>Waffle - R$ 2,00</li>
+                        <li>Brownie - R$ 3,00</li>
+                        <li>Café - R$ 2,00</li>
+                        <li>Chá - R$ 1,50</li>
+                        <li>Chocolate Quente - R$ 5,50</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="equipe">
+        <h2>Nossa Equipe</h2>
+        
+        <div class="team-grid">
+            <div class="team-member">
+                <h3>Kawã Fernandes da Silva Moreira</h3>
+                <p>Diretor Geral</p>
+                <p>(11) 9 7777-7777</p>
+            </div>
+            
+            <div class="team-member">
+                <h3>Felipe Gomes de Oliveira</h3>
+                <p>Gerente de Vendas</p>
+                <p>(11) 9 0289-2839</p>
+            </div>
+            
+            <div class="team-member">
+                <h3>Pedro Henrique Almeida Dias</h3>
+                <p>Gestor Financeiro</p>
+                <p>(11) 9 6969-6996</p>
+            </div>
+            
+            <div class="team-member">
+                <h3>Igor Massone Monteiro</h3>
+                <p>Gestor de RH</p>
+                <p>(11) 9 7895-6894</p>
+            </div>
+            
+            <div class="team-member">
+                <h3>Kaynã Marques da Silva</h3>
+                <p>Gestor de Logística</p>
+                <p>(11) 9 4753-9089</p>
+            </div>
+        </div>
+    </section>
+    
+    <section id="localizacao">
+        <h2>Localização</h2>
+        
+        <div class="contact-info">
+            <h3>Neve Encantada Gelatto LTDA</h3>
+            <p><strong>Endereço:</strong> Rua Gelada, 123 - Bairro Congelado - São Paulo/SP</p>
+            <p><strong>Telefone:</strong> (11) 9 6969-6968</p>
+            <p><strong>Funcionamento:</strong> Diariamente</p>
+        </div>
+        
+        <div style="margin-top: 2rem;">
+            <h3>Por que nossa localização é ideal?</h3>
+            <ul>
+                <li>Região urbana com grande fluxo</li>
+                <li>Público variado compatível com nossos segmentos</li>
+                <li>Facilidade de acesso local</li>
+            </ul>
+        </div>
+    </section>
+    
+    <section id="contato">
+        <h2>Entre em Contato</h2>
+        
+        <div class="contact-info">
+            <p>Estamos sempre abertos para ouvir nossos clientes e parceiros.</p>
+            <p><strong>Telefone:</strong> (11) 9 6969-6968</p>
+            <p><strong>E-mail:</strong> contato@neveencantada.com.br</p>
+            
+            <div class="social-links">
+                <a href="#" title="Instagram">📷</a>
+                <a href="#" title="Facebook">📘</a>
+                <a href="#" title="TikTok">🎵</a>
+                <a href="#" title="YouTube">▶️</a>
+            </div>
+            
+            <p>Siga-nos nas redes sociais para ficar por dentro das novidades e promoções!</p>
+        </div>
+    </section>
+    
+    <footer>
+        <p>Neve Encantada Gelatto LTDA &copy; 2025 - Todos os direitos reservados</p>
+        <p>Rua Gelada, 123 - Bairro Congelado - São Paulo/SP</p>
+    </footer>
+</body>
+</html>
